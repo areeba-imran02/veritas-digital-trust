@@ -3,60 +3,65 @@ import streamlit as st
 def render_header():
     st.markdown("""
         <style>
-        .veritas-3d-container {
-            padding: 10px 0 20px 0;
-            border-bottom: 1px solid #30363d;
-            margin-bottom: 25px;
+        .veritas-header-box {
+            background: linear-gradient(135deg, #0b0f19 0%, #111827 100%);
+            border: 1px solid #1f2937;
+            padding: 24px 32px;
+            border-radius: 16px;
+            margin-bottom: 24px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
-        .veritas-wordmark {
-            font-size: 38px;
+        .veritas-title-3d {
+            font-size: 42px;
             font-weight: 900;
-            letter-spacing: 2px;
+            letter-spacing: 3px;
             text-transform: uppercase;
             color: #ffffff;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Inter', sans-serif;
             text-shadow: 
-                0 1px 0 #cccccc,
-                0 2px 0 #c9c9c9,
-                0 3px 0 #bbbbbb,
-                0 4px 0 #b9b9b9,
-                0 5px 0 #aaaaaa,
-                0 6px 1px rgba(0,0,0,0.1),
-                0 0 5px rgba(0,0,0,0.1),
-                0 1px 3px rgba(0,0,0,0.3),
-                0 3px 5px rgba(0,0,0,0.4),
-                0 5px 10px rgba(0,0,0,0.5),
-                0 10px 20px rgba(0,0,0,0.5);
-            display: inline-block;
+                0 1px 0 #cbd5e1,
+                0 2px 0 #94a3b8,
+                0 3px 0 #64748b,
+                0 4px 0 #475569,
+                0 5px 0 #334155,
+                0 6px 1px rgba(0,0,0,0.2),
+                0 0 10px rgba(59, 130, 246, 0.5),
+                0 10px 20px rgba(0, 0, 0, 0.6);
+            margin: 0;
         }
-        .veritas-badge {
-            font-size: 11px;
-            font-weight: 600;
-            color: #58a6ff;
-            background: rgba(56, 139, 253, 0.1);
-            padding: 5px 10px;
-            border-radius: 6px;
-            border: 1px solid rgba(56, 139, 253, 0.3);
-            vertical-align: middle;
-            margin-left: 15px;
-            letter-spacing: 1px;
+        .veritas-badge-modern {
+            font-size: 12px;
+            font-weight: 700;
+            color: #60a5fa;
+            background: rgba(59, 130, 246, 0.15);
+            padding: 6px 12px;
+            border-radius: 20px;
+            border: 1px solid rgba(59, 130, 246, 0.3);
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
         }
-        .veritas-subtitle {
-            margin: 8px 0 0 0;
-            color: #8b949e;
-            font-size: 14px;
+        .veritas-subtext {
+            color: #9ca3af;
+            font-size: 15px;
+            margin-top: 8px;
+            margin-bottom: 0;
             font-weight: 400;
         }
         </style>
         
-        <div class="veritas-3d-container">
+        <div class="veritas-header-box">
             <div>
-                <span class="veritas-wordmark">VERITAS</span>
-                <span class="veritas-badge">ENTERPRISE CORE 4.2</span>
+                <h1 class="veritas-title-3d">VERITAS</h1>
+                <p class="veritas-subtext">
+                    Enterprise Multimodal Threat Intelligence & Advanced Scam Detection Platform
+                </p>
             </div>
-            <p class="veritas-subtitle">
-                Global-First Multimodal Scam Detection & Forensic Threat Intelligence Platform
-            </p>
+            <div>
+                <span class="veritas-badge-modern">CORE v4.2 SECURE</span>
+            </div>
         </div>
     """, unsafe_allow_html=True)
 
