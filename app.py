@@ -40,29 +40,29 @@ def main():
     input_payload = {}
     
     with tab_text:
-        text_input = st.text_area("Paste suspicious message, SMS, or email content:", height=150, placeholder="e.g., Dear user, your account has been suspended. Click here to verify your credentials immediately...")
-        sender_id = st.text_input("Sender Identifier (Phone number, email address, or handle):", placeholder="e.g., +923001234567 or support@secure-bank-update.com")
-        if text_input or sender_id:
+        text_input = st.text_area("Paste suspicious message, SMS, or email content:", height=150, placeholder="e.g., Dear user, your account has been suspended. Click here to verify your credentials immediately...", key="t_input")
+        sender_id = st.text_input("Sender Identifier (Phone number, email address, or handle):", placeholder="e.g., +923001234567 or support@secure-bank-update.com", key="s_input")
+        if text_input.strip() or sender_id.strip():
             input_payload = {"type": "text", "content": text_input, "sender": sender_id}
 
     with tab_url:
-        url_input = st.text_input("Enter target URL or suspicious link:", placeholder="https://login-verify-bank-pk.com/auth")
-        if url_input:
+        url_input = st.text_input("Enter target URL or suspicious link:", placeholder="https://login-verify-bank-pk.com/auth", key="u_input")
+        if url_input.strip():
             input_payload = {"type": "url", "url": url_input}
 
     with tab_media:
-        uploaded_image = st.file_uploader("Upload chat screenshot or payment receipt image", type=["png", "jpg", "jpeg"])
-        if uploaded_image:
+        uploaded_image = st.file_uploader("Upload chat screenshot or payment receipt image", type=["png", "jpg", "jpeg"], key="img_up")
+        if uploaded_image is not None:
             input_payload = {"type": "screenshot", "file": uploaded_image}
 
     with tab_qr:
-        uploaded_qr = st.file_uploader("Upload QR code image", type=["png", "jpg", "jpeg"])
-        if uploaded_qr:
+        uploaded_qr = st.file_uploader("Upload QR code image", type=["png", "jpg", "jpeg"], key="qr_up")
+        if uploaded_qr is not None:
             input_payload = {"type": "qr", "file": uploaded_qr}
 
     with tab_audio:
-        uploaded_audio = st.file_uploader("Upload voice note or intercepted audio call (.wav, .mp3)", type=["wav", "mp3", "m4a"])
-        if uploaded_audio:
+        uploaded_audio = st.file_uploader("Upload voice note or intercepted audio call (.wav, .mp3)", type=["wav", "mp3", "m4a"], key="aud_up")
+        if uploaded_audio is not None:
             input_payload = {"type": "audio", "file": uploaded_audio}
 
     st.markdown("---")
