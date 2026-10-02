@@ -1,0 +1,9 @@
+fastapi>=0.115,<1.0
+uvicorn[standard]>=0.30,<1.0
+pydantic>=2.7,<3.0
+pydantic-settings>=2.3,<3.0
+httpx>=0.27,<1.0
+python-multipart>=0.0.9
+groq>=0.11
+# Later prompts add ONLY what they need (e.g. QR decoding, image handling)
+# and must append it here with a comment naming the prompt that added it.

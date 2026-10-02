@@ -1,0 +1,54 @@
+/* VERITAS design tokens - the single source of visual truth (see docs/DESIGN_SYSTEM.md).
+   Components must use these variables only: no hard-coded colours, radii or spacing.
+   Theme: no data-theme attribute = follow system; data-theme="light"|"dark" = explicit. */
+
+:root {
+  /* typography */
+  --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-mono: ui-monospace, "SF Mono", "JetBrains Mono", Menlo, Consolas, monospace;
+  --text-xs: 0.75rem; --text-sm: 0.875rem; --text-md: 1rem;
+  --text-lg: 1.25rem; --text-xl: 1.75rem; --text-2xl: 2.5rem;
+
+  /* spacing (4px base) */
+  --space-1: 4px; --space-2: 8px; --space-3: 12px; --space-4: 16px;
+  --space-5: 24px; --space-6: 32px; --space-7: 48px; --space-8: 72px;
+
+  /* shape + motion */
+  --radius-sm: 8px; --radius-md: 12px; --radius-lg: 18px; --radius-pill: 999px;
+  --ease: cubic-bezier(0.2, 0.7, 0.2, 1); --dur-fast: 120ms; --dur: 220ms;
+
+  /* light theme (default values) */
+  --bg: #f5f7fb; --surface: #ffffff; --surface-2: #eef2f8;
+  --border: #d9e0ec; --text: #0e1521; --text-muted: #5a6679;
+  --accent: #2f62e6; --accent-contrast: #ffffff; --focus: #2f62e6;
+  --risk-low: #138a63; --risk-verify: #b7791f; --risk-high: #d12f3b;
+  --shadow: 0 1px 2px rgba(14,21,33,.06), 0 8px 24px rgba(14,21,33,.08);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0a0e14; --surface: #111722; --surface-2: #171e2b;
+    --border: #232c3c; --text: #e8ecf3; --text-muted: #8b96a8;
+    --accent: #5b8cff; --accent-contrast: #07101f; --focus: #7aa2ff;
+    --risk-low: #2fbf8f; --risk-verify: #f2b544; --risk-high: #f2555d;
+    --shadow: 0 1px 2px rgba(0,0,0,.4), 0 12px 32px rgba(0,0,0,.45);
+  }
+}
+
+:root[data-theme="dark"] {
+  --bg: #0a0e14; --surface: #111722; --surface-2: #171e2b;
+  --border: #232c3c; --text: #e8ecf3; --text-muted: #8b96a8;
+  --accent: #5b8cff; --accent-contrast: #07101f; --focus: #7aa2ff;
+  --risk-low: #2fbf8f; --risk-verify: #f2b544; --risk-high: #f2555d;
+  --shadow: 0 1px 2px rgba(0,0,0,.4), 0 12px 32px rgba(0,0,0,.45);
+}
+
+* { box-sizing: border-box; }
+html, body, #root { height: 100%; }
+body {
+  margin: 0; background: var(--bg); color: var(--text);
+  font-family: var(--font-sans); font-size: var(--text-md); line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; } }
