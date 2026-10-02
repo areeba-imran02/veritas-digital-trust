@@ -1,0 +1,9 @@
+streamlit>=1.30.0
+groq>=0.4.2
+pillow>=10.0.0
+qrcode>=7.4.2
+opencv-python-headless>=4.8.0.76
+pyzbar>=0.1.9
+pytest>=7.4.0
+requests>=2.31.0
+numpy>=1.24.0
